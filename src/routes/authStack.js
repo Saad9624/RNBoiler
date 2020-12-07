@@ -1,25 +1,41 @@
-import React from 'react';
+  import React from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import  Login  from '../screens/auth/login' ;
+import Home from '../screens/home' ;
+import Welcome from '../screens/welcome' ;
+import Verfication from '../screens/verification' ;
+import Signup from '../screens/signup' ;
+import DrawerStack from './drawerAuth' ;
+import Splash from '../screens/splash' ;
 
 const Stack = createStackNavigator();
 
 const  AuthStack = () => {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{headerShown: false}}>
           <Stack.Screen
-           name="Login"
-            component={Login} options={{headerShown: false}} />
+          name="Splash"
+          component={Splash}
+          />
 
-          {/* <Stack.Screen
+      <Stack.Screen
+           name="Welcom"
+            component={Welcome} /> 
+
+      <Stack.Screen
+           name="Verfication"
+            component={Verfication} /> 
+
+      <Stack.Screen
            name="Signup"
-            component={Signup} options={{headerShown: false}} />
+            component={Signup} /> 
 
           <Stack.Screen
-           name="Home"
-            component={DrawerStack} options={{headerShown: false}} /> */}
+           name="DrawerStack"
+            component={DrawerStack}/> 
+
 
         </Stack.Navigator>
     );
